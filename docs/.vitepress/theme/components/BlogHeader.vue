@@ -20,14 +20,15 @@ const { frontmatter } = useData()
 <style scoped>
 .blog-post-header {
   margin-bottom: 40px;
-  padding-bottom: 24px;
+  padding: 24px 0;
   border-bottom: 1px solid var(--vp-c-border);
 }
 
 .blog-post-header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 800;
   margin: 0 0 16px 0;
+  line-height: 1.2;
 }
 
 .blog-post-meta {
