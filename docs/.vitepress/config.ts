@@ -99,5 +99,17 @@ export default defineConfig({
     ]
   },
 
+  transformPageData(pageData) {
+    const { frontmatter } = pageData
+    if (frontmatter.layout === 'page' && frontmatter.date) {
+      const date = new Date(frontmatter.date)
+      frontmatter.formattedDate = date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+    }
+  },
+
   buildEnd: genFeed,
 })

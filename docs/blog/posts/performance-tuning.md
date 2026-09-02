@@ -1,10 +1,12 @@
 ---
-layout: blog
+layout: page
 title: Performance Tuning at Scale
 date: 2025-03-01
 author: Platform Team
 tags: ['performance', 'scaling', 'optimization']
 ---
+
+<BlogHeader />
 
 # Performance Tuning at Scale
 

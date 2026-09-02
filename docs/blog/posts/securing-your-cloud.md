@@ -1,10 +1,12 @@
 ---
-layout: blog
+layout: page
 title: Securing Your Cloud Deployment
 date: 2025-02-08
 author: Security Team
 tags: ['security', 'best-practices', 'deployment']
 ---
+
+<BlogHeader />
 
 # Securing Your Cloud Deployment
 

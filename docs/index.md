@@ -1,8 +1,8 @@
 ---
 layout: home
-title: LykCloud Wiki
+title: LykCloud
 hero:
-  name: LykCloud 
+  name: LykCloud
   text: Wiki
   tagline: Guides, tutorials, and insights from the LykCloud team
   actions:

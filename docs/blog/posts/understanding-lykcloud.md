@@ -1,10 +1,12 @@
 ---
-layout: blog
+layout: page
 title: Understanding LykCloud Architecture
 date: 2025-01-15
 author: LykCloud Team
 tags: ['architecture', 'cloud', 'infrastructure']
 ---
+
+<BlogHeader />
 
 # Understanding LykCloud Architecture
 
