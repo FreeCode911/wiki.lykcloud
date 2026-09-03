@@ -5,6 +5,9 @@ hero:
   name: LykCloud
   text: Wiki
   tagline: Guides, tutorials, and insights from the LykCloud team
+  image:
+    src: /logo.png
+    alt: LykCloud Logo
   actions:
     - text: Browse Guides
       link: /guide/

@@ -6,7 +6,9 @@ author: Platform Team
 tags: ['performance', 'scaling', 'optimization']
 ---
 
-<BlogHeader />
+<BlogMeta />
+
+# Performance Tuning at Scale
 
 As your traffic grows, small inefficiencies compound. Here's how to identify and fix performance bottlenecks on LykCloud.
 

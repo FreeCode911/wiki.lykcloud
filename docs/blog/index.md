@@ -1,21 +1,14 @@
 ---
-layout: home
+layout: page
 title: Blog
-hero:
-  name: Blog
-  text: Latest updates, deep dives, and engineering notes from the LykCloud team
-  actions:
-    - text: Browse Guides
-      link: /guide/
-      theme: alt
-features:
-  - title: Understanding LykCloud Architecture
-    details: A deep dive into the distributed, multi-tenant architecture powering LykCloud.
-    link: /blog/posts/understanding-lykcloud
-  - title: Securing Your Cloud Deployment
-    details: Continuous security practices every LykCloud project should adopt.
-    link: /blog/posts/securing-your-cloud
-  - title: Performance Tuning at Scale
-    details: How to identify and fix performance bottlenecks on LykCloud.
-    link: /blog/posts/performance-tuning
 ---
+
+# Blog
+
+Latest updates, deep dives, and engineering notes from the LykCloud team.
+
+## Posts
+
+- [Understanding LykCloud Architecture](/blog/posts/understanding-lykcloud) — January 15, 2025
+- [Securing Your Cloud Deployment](/blog/posts/securing-your-cloud) — February 8, 2025
+- [Performance Tuning at Scale](/blog/posts/performance-tuning) — March 1, 2025

@@ -6,7 +6,9 @@ author: LykCloud Team
 tags: ['architecture', 'cloud', 'infrastructure']
 ---
 
-<BlogHeader />
+<BlogMeta />
+
+# Understanding LykCloud Architecture
 
 LykCloud is built on a distributed, multi-tenant architecture designed for high availability and low latency. In this post, we'll walk through the core components that make up the platform.
 

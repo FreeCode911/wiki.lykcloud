@@ -9,6 +9,11 @@ export default defineConfig({
 
   appearance: 'dark',
 
+  head: [
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    ['script', {}, `requestAnimationFrame(()=>requestAnimationFrame(()=>{document.querySelectorAll('button.copy').forEach(b=>b.removeAttribute('title'))}))`],
+  ],
+
   sitemap: {
     hostname: 'https://wiki.lykcloud.int.yt',
     lastmodDateOnly: false,
@@ -54,6 +59,7 @@ export default defineConfig({
         },
       ],
       '/blog/': [],
+      '/blog/posts/': [],
     },
 
     search: {
@@ -62,7 +68,7 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2025-present LykCloud Team',
+      copyright: 'Copyright © 2026-present LykCloud Team',
     },
 
     lastUpdated: {

@@ -1,10 +1,10 @@
 import DefaultTheme from 'vitepress/theme'
-import BlogHeader from './components/BlogHeader.vue'
+import BlogMeta from './components/BlogMeta.vue'
 import './crypto.css'
 
 export default {
-  extends: DefaultTheme,
+  ...DefaultTheme,
   enhanceApp({ app }) {
-    app.component('BlogHeader', BlogHeader)
-  },
+    app.component('BlogMeta', BlogMeta)
+  }
 }

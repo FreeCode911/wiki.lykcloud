@@ -6,7 +6,9 @@ author: Security Team
 tags: ['security', 'best-practices', 'deployment']
 ---
 
-<BlogHeader />
+<BlogMeta />
+
+# Securing Your Cloud Deployment
 
 Security doesn't end after deployment. This post covers the continuous security practices every LykCloud project should adopt.
 
