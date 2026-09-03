@@ -11,7 +11,7 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    ['script', {}, `requestAnimationFrame(()=>requestAnimationFrame(()=>{document.querySelectorAll('button.copy').forEach(b=>b.removeAttribute('title'))}))`],
+    ['script', {}, `window.addEventListener('load',()=>{var i=setInterval(()=>{document.querySelectorAll('button.copy').forEach(b=>b.removeAttribute('title'))},100);setTimeout(()=>clearInterval(i),3000)})`],
   ],
 
   sitemap: {

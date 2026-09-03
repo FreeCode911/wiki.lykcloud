@@ -34,6 +34,18 @@
 
   --vp-home-hero-name-color: #8169f3;
 
+  /* Code block — themed */
+  --vp-code-block-bg: rgba(13, 13, 20, 0.8);
+  --vp-code-block-divider-color: rgba(129, 105, 243, 0.15);
+  --vp-code-block-color: var(--vp-c-text-1);
+  --vp-code-line-number-color: var(--vp-c-text-3);
+  --vp-code-lang-color: var(--vp-c-text-3);
+  --vp-code-copy-code-border-color: rgba(129, 105, 243, 0.2);
+  --vp-code-copy-code-bg: rgba(129, 105, 243, 0.06);
+  --vp-code-copy-code-hover-border-color: var(--vp-c-brand-1);
+  --vp-code-copy-code-hover-bg: rgba(129, 105, 243, 0.14);
+  --vp-code-copy-code-active-text: var(--vp-c-brand-1);
+
   /* Custom palette */
   --crypto-purple-deep: #3c2f98;
   --crypto-purple-light: #8169f3;
@@ -123,25 +135,12 @@ a:hover {
 
 /* === 6. CODE BLOCKS === */
 
-div[class*='language-'] {
-  background: rgba(13, 13, 20, 0.8) !important;
-  border: 1px solid rgba(129, 105, 243, 0.1) !important;
-  border-radius: 12px !important;
-  box-shadow: 0 0 30px rgba(129, 105, 243, 0.05) !important;
-}
-
-/* Copy button - keep transparent, no background */
-div[class*='language-'] .copy {
-  background: transparent !important;
-  border: none !important;
-  color: var(--vp-c-brand-1) !important;
-}
-
-div[class*='language-'] .copy:hover {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
+/* Code blocks are styled entirely by VitePress's defaults under
+   `.vp-doc` (see vp-doc.css in node_modules). The CSS variables
+   above (--vp-code-block-bg, --vp-code-copy-code-*, etc.) theme
+   the appearance. Blog posts render through our custom VPPage.vue
+   (theme/components/VPPage.vue) which adds the `vp-doc` class so
+   the same defaults apply. */
 
 /* === 7. CUSTOM CONTAINER BLOCKS === */
 
@@ -420,163 +419,6 @@ code, pre, kbd, samp {
   border: 1px solid var(--vp-c-border);
 }
 
-/* Code blocks — VitePress 2.x structure:
-   <div class="language-bash line-numbers-mode">
-     <button class="copy"></button>
-     <span class="lang">bash</span>
-     <pre class="shiki"><code><span class="line">...</span></code></pre>
-     <div class="line-numbers-wrapper"><span class="line-number">1</span></div>
-   </div>
-*/
-div[class*='language-'] {
-  position: relative;
-  margin: 24px 0;
-  padding: 20px 20px 20px 56px;
-  background: var(--vp-c-bg-alt) !important;
-  border: 1px solid var(--vp-c-border) !important;
-  border-radius: 8px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  line-height: 1.6;
-  font-size: 0.875rem;
-  max-width: 100%;
-}
-
-/* Language label - position top right, clean text only */
-div[class*='language-'] > .lang {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  font-size: 0.7rem;
-  font-family: var(--vp-font-family-mono);
-  color: var(--vp-c-text-3);
-  text-transform: lowercase;
-  letter-spacing: 0.05em;
-  z-index: 2;
-  pointer-events: none;
-  background: none !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Copy button - subtle purple icon, visible on hover */
-div[class*='language-'] > .copy,
-div[class*='language-'] > button.copy {
-  position: absolute !important;
-  top: 8px !important;
-  right: 8px !important;
-  width: 28px !important;
-  height: 28px !important;
-  background-color: transparent !important;
-  background-image: var(--vp-icon-copy) !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 16px 16px !important;
-  border: 1px solid var(--vp-c-border) !important;
-  border-radius: 6px !important;
-  cursor: pointer;
-  opacity: 0.5;
-  transition: all 0.2s;
-  z-index: 3;
-  padding: 0 !important;
-  margin: 0 !important;
-  box-shadow: none !important;
-  color: var(--vp-c-text-3) !important;
-  font-size: 0 !important;
-  text-indent: -9999px !important;
-  overflow: hidden !important;
-}
-
-div[class*='language-']:hover > .copy,
-div[class*='language-'] > .copy:focus,
-div[class*='language-']:hover > button.copy,
-div[class*='language-'] > button.copy:focus {
-  opacity: 1;
-  border-color: var(--vp-c-brand-1) !important;
-  background-color: rgba(129, 105, 243, 0.1) !important;
-}
-
-div[class*='language-'] > .copy:hover,
-div[class*='language-'] > button.copy:hover {
-  opacity: 1;
-  border-color: var(--vp-c-brand-1) !important;
-  background-color: rgba(129, 105, 243, 0.15) !important;
-}
-
-div[class*='language-'] > .copy.copied,
-div[class*='language-'] > button.copy.copied {
-  background-color: rgba(129, 105, 243, 0.2) !important;
-  border-color: var(--vp-c-brand-1) !important;
-}
-
-/* Hide any label/tooltip text */
-div[class*='language-'] .copy-label,
-div[class*='language-'] [class*='label'] {
-  display: none !important;
-}
-
-/* The pre element - the actual code */
-div[class*='language-'] pre {
-  margin: 0;
-  padding: 0;
-  background: none !important;
-  border: none !important;
-  overflow-x: auto;
-  overflow-y: hidden;
-  font-family: var(--vp-font-family-mono);
-  color: var(--vp-c-text-1);
-  white-space: pre;
-  min-width: 0;
-  max-width: 100%;
-  -webkit-overflow-scrolling: touch;
-}
-
-div[class*='language-'] code {
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 0.875rem;
-  color: var(--vp-c-text-1);
-  font-family: var(--vp-font-family-mono);
-  display: block;
-  white-space: inherit;
-}
-
-/* Allow code to scroll horizontally instead of overflowing */
-div[class*='language-'] pre code {
-  white-space: pre;
-  word-wrap: normal;
-  word-break: normal;
-}
-
-/* Lines */
-div[class*='language-'] .line {
-  display: block;
-  min-height: 1.6em;
-  line-height: 1.6;
-}
-
-/* Line numbers - position to the left */
-div[class*='language-'] .line-numbers-wrapper {
-  position: absolute;
-  top: 20px;
-  left: 0;
-  width: 40px;
-  padding: 0 8px;
-  text-align: right;
-  font-family: var(--vp-font-family-mono);
-  font-size: 0.75rem;
-  color: var(--vp-c-text-3);
-  user-select: none;
-  pointer-events: none;
-}
-
-div[class*='language-'] .line-number {
-  display: block;
-  line-height: 1.6;
-}
-
 /* === 11. FLUID RESPONSIVE — auto-adjusts to any screen size === */
 
 /* Use clamp() for fluid typography that scales with viewport */
@@ -757,14 +599,6 @@ div[class*='language-'] .line-number {
 
 .VPPage > div > ul > li {
   padding: clamp(12px, 1.5vw, 16px) 0;
-}
-
-/* Code blocks: always fit container, line numbers hide on narrow */
-.VPPage div[class*='language-'] {
-  max-width: 100%;
-  overflow-x: auto;
-  font-size: clamp(0.75rem, 0.5vw + 0.7rem, 0.875rem);
-  padding: clamp(12px, 1.5vw, 20px);
 }
 
 /* Tables: scrollable within container */
